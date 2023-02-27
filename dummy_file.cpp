@@ -7,19 +7,7 @@ int mul(int a, int b)
     
     return ((a%mod)*(b%mod))%mod;
 }
-int binpow(int a, int b)
-{
-    if(b==0)
-    {
-    return 1;
-    
-    }
-    int tmp=binpow(a, b/2);
-    tmp=mul(tmp, tmp);
-    if(b%2)
-    return mul(tmp, a);
-    return tmp;
-}
+
 int mod_inverse(int a, int m=mod)
 {
     return binpow(a, m-2);
